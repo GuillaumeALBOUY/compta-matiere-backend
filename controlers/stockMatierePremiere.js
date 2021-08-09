@@ -43,6 +43,7 @@ exports.injectionTest = (req, res, next) => {
         nom: 'T10',
         fournisseur: 'malterie de test',
         lot: 'gros',
+        dlc: new Date(2022, 11, 15),
         qCommande: 25,
     });
     matiere.save()
