@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const mpRoute = require('./routes/stockMatierePremiere');
 
@@ -22,6 +23,8 @@ app.use((req,res,next) => {
     console.log('Bon début');
     next();
 });
+
+app.use(bodyParser.json());
 
 app.use('/api/stockmp', mpRoute);
 

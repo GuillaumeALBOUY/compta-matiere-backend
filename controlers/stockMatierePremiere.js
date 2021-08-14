@@ -1,5 +1,16 @@
-const matiere = require('../models/matiere');
 const Matiere = require('../models/matiere');
+
+exports.createMP = (req, res, next) => {
+    console.log("demande de création "+  " ** " + req.body.matiere.nom);
+  const matiereObject = req.body.matiere;
+  delete matiereObject._id;
+  const matiere = new Matiere({
+    ...matiereObject,
+    });
+  matiere.save()
+    .then(() => res.status(201).json({ message: 'Objet enregistré !'}))
+    .catch(error => res.status(400).json({ error }));
+}
 
 
 exports.getOneMP = (req, res, next) => {
