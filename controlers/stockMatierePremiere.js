@@ -34,7 +34,7 @@ exports.getOneMP = (req, res, next) => {
 };
 
 exports.getAllMP = (req, res, next) => {
-    Matiere.find().then(
+    Matiere.find({},{_id:0,__v:0, mouvements:0}).then(
         (matiere) => {
             res.status(200).json(matiere);
         }
@@ -56,6 +56,11 @@ exports.injectionTest = (req, res, next) => {
         lot: 'gros',
         dlc: new Date(2022, 11, 15),
         qCommande: 25,
+        mouvements : [{ 
+            quantite : -5,
+            date : new Date(2022, 11, 16),
+            brassin : 'brassin de test'
+           }]
     });
     matiere.save()
       .then(() => res.status(201).json({ message: 'Objet enregistré !'}))

@@ -6,6 +6,11 @@ const matiereSchema = mongoose.Schema({
   lot: { type: String, required: true },
   dlc: { type: Date, required: true},
   qCommande: { type: Number, required: true },
+  mouvements : [{ 
+    quantite : {type : Number, required: true},
+    date : {type : Date, required: true},
+    brassin : String
+   }]
 });
 
 module.exports = mongoose.model('Matiere', matiereSchema);
