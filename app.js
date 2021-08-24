@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const mpRoute = require('./routes/stockMatierePremiere');
+const brassinRoute = require('./routes/historiqueBrassin');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use((req,res,next) => {
 app.use(bodyParser.json());
 
 app.use('/api/stockmp', mpRoute);
+app.use('/api/histobrassin', brassinRoute);
 
 module.exports = app;
 
