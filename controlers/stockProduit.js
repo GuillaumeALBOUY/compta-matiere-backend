@@ -35,7 +35,7 @@ exports.getOneProduit = (req, res, next) => {
 exports.getProduitbyBrassin = (req, res, next) => {
     console.log("Recherche de : " + req.params.ref);
 
-    Produit.findOne({
+    Produit.find({
         brassin: req.params.ref
     }).then(
         (produit) => {

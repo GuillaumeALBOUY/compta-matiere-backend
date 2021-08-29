@@ -6,7 +6,7 @@ const histoBrassinCtrl = require('../controlers/historiqueBrassin');
 
 router.get('/', histoBrassinCtrl.getAllBrassins);
 router.get('/test', histoBrassinCtrl.injectionTest);
-//router.get('/:ref', histoBrassinCtrl.getOneMP);
+router.get('/:ref', histoBrassinCtrl.getOneBrassin);
 router.post('/', histoBrassinCtrl.createBrassin);
 //router.put('/:ref', histoBrassinCtrl.updateMp);
 
