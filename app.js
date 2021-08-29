@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const mpRoute = require('./routes/stockMatierePremiere');
 const brassinRoute = require('./routes/historiqueBrassin');
+const produitRoute = require('./routes/stockProduit')
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(bodyParser.json());
 
 app.use('/api/stockmp', mpRoute);
 app.use('/api/histobrassin', brassinRoute);
+app.use('/api/stockproduit', produitRoute);
 
 module.exports = app;
 
