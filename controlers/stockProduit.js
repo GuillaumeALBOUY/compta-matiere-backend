@@ -20,7 +20,7 @@ exports.getOneProduit = (req, res, next) => {
     }).then(
         (produit) => {
             console.log("Trouvé !");
-            console.log(produit);
+            //console.log(produit);
             res.status(200).json(produit);
         }
     ).catch(
@@ -85,6 +85,7 @@ exports.getAllProduit = (req, res, next) => {
 };
 
 exports.updateProduit = (req, res, next) => {
+    console.log('Modification du produit '+req.params.ref);
     Produit.updateOne({ ref: req.params.ref }, { ...req.body.produit })
         .then(() => res.status(200).json({ message: 'Objet modifié !' }))
         .catch(error => res.status(400).json({ error }));

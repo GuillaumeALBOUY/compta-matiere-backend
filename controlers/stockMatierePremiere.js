@@ -21,7 +21,7 @@ exports.getOneMP = (req, res, next) => {
     }).then(
         (matiere) => {
             console.log("Trouvé !");
-            console.log(matiere);
+            //console.log(matiere);
             res.status(200).json(matiere);
         }
     ).catch(

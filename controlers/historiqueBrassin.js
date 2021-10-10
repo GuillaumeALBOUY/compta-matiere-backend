@@ -48,7 +48,7 @@ exports.getOneBrassin = (req, res, next) => {
     }).then(
         (brassin) => {
             console.log("Trouvé !");
-            console.log(brassin);
+            //console.log(brassin);
             res.status(200).json(brassin);
         }
     ).catch(
